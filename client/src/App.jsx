@@ -9,17 +9,18 @@ import Dashboard from "./pages/Dashboard";
 import AccessControlPage from "./pages/AccessControlPage";
 import CreateContractPage from "./pages/CreateContractPage";
 
+
 function App() {
   return(
   <div className="flex-col space-y-24">
     <NavBar/>
     <Routes>
-      {/* <Route path="/" element={<Home/>}/>
-      <Route path="/enroll" element={<EnrollmentForm/>}/> */}
-      {/* <Route path="/" element={<Overview/>}/> */}
-      {/* <Route path="/" element={<Dashboard/>}/> */}
-      {/* <Route path="/" element={<AccessControlPage/>}/> */}
-      <Route path="/" element={<CreateContractPage/>}/>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/enroll" element={<EnrollmentForm/>}/>
+      <Route path="/overview" element={<Overview/>}/> 
+      <Route path="/dashboard" element={<Dashboard/>}/>
+      <Route path="/access-control" element={<AccessControlPage/>}/>
+      <Route path="/create-contract" element={<CreateContractPage/>}/>
     </Routes>
   </div>)
 }
