@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import AccessControlPage from "./pages/AccessControlPage";
 import CreateContractPage from "./pages/CreateContractPage";
+import Organizations from "./pages/Organizations";
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
       <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/access-control" element={<AccessControlPage/>}/>
       <Route path="/create-contract" element={<CreateContractPage/>}/>
+      <Route path="/organizations" element={<Organizations/>}/>
     </Routes>
   </div>)
 }
-
 export default App;
