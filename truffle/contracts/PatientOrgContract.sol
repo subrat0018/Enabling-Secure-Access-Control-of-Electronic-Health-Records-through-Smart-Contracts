@@ -15,10 +15,58 @@ contract PatientOrgContract {
         mapping(string => string) patientData;
         string[] dataTypes;
     }
+    struct OrganizationWithAccess {
+        string name;
+        address orgAddress;
+        DataTypeWithAccess[] hasAccess;
+    }
 
     mapping(address => AccessControl) public patientAccessControls; // Mapping to store AccessControl for each patient
     mapping(address => Organization[]) public patientOrganizations; // Stores multiple organizations for each patient
 
+    // Get all organizations and their access for a patient
+    function getAllOrganizationsWithAccess() public view returns (OrganizationWithAccess[] memory) {
+        AccessControl storage accessControl = patientAccessControls[msg.sender];
+
+        uint orgCount = patientOrganizations[accessControl.patient].length;
+        OrganizationWithAccess[] memory orgsWithAccess = new OrganizationWithAccess[](orgCount);
+
+        for (uint i = 0; i < orgCount; i++) {
+            Organization memory org = patientOrganizations[accessControl.patient][i];
+            orgsWithAccess[i] = OrganizationWithAccess({
+                name: org.name,
+                orgAddress: org.orgAddress,
+                hasAccess: getAllDataTypesWithAccessForOrganization(org.orgAddress)
+            });
+        }
+
+        return orgsWithAccess;
+    }
+
+        function getAllDataTypesWithAccessForOrganization(address _orgAddress) public view onlyPatient returns (DataTypeWithAccess[] memory) {
+        AccessControl storage accessControl = patientAccessControls[msg.sender];
+
+        uint dataTypeCount = accessControl.dataTypes.length;
+        DataTypeWithAccess[] memory dataTypesWithAccess = new DataTypeWithAccess[](dataTypeCount);
+
+        for (uint i = 0; i < dataTypeCount; i++) {
+            string memory dataType = accessControl.dataTypes[i];
+            bool hasAccess = accessControl.authorizedEntitiesForDataType[dataType][_orgAddress];
+
+            dataTypesWithAccess[i] = DataTypeWithAccess({
+                dataType: dataType,
+                hasAccess: hasAccess
+            });
+        }
+
+        return dataTypesWithAccess;
+    }
+
+    // Helper struct to store data type details along with access status
+    struct DataTypeWithAccess {
+        string dataType;
+        bool hasAccess;
+    }
     // Events
     event AccessGranted(address indexed entity, string dataType);
     event AccessRevoked(address indexed entity, string dataType);
