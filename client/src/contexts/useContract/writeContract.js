@@ -1,5 +1,6 @@
 //EnrollmentContract
 const enroll = async (contract,account,name,patientAddress,aadharNumber) => {
+  console.log(contract)
     if (!contract) {
       return false;
     }
@@ -11,6 +12,9 @@ const enroll = async (contract,account,name,patientAddress,aadharNumber) => {
 
   
 //OverviewContract
+
+
+
 //PatientOrg
 const setPatient= async (contract,account,patientAddress) => {
   if (!contract) {
@@ -55,8 +59,9 @@ const updatePatientData= async(contract,account,_dataType,_ipfsuri)=>{
     return false;
   }
   const res = await contract.methods
-    .updatePatientData(_entity,_dataType,_ipfsuri)
+    .updatePatientData(_dataType,_dataType,_ipfsuri)
     .send({ from: account });
   return res;
 
 }
+export {enroll, setPatient, addOrganizationForPatient, grantAccess, revokeAccess, updatePatientData}
