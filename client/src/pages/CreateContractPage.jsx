@@ -4,6 +4,8 @@ import { useContext } from "react";
 import Web3Context from "../contexts";
 import { addOrganizationForPatient, updatePatientData } from "../contexts/useContract/writeContract";
 import { grantAccess } from "../contexts/useContract/writeContract";
+import client from '../utils/ipfs';
+
 
 const CreateContractPage = () => {
   const {account, _EnrollmentContract, _PatientOrgContract} = useContext(Web3Context);
