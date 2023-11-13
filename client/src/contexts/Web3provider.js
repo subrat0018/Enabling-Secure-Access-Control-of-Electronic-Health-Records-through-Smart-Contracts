@@ -93,7 +93,8 @@ const Web3Provider = ({ children }) => {
         account,
         _OverviewContract,
         _PatientOrgContract,
-        _OverviewContract
+        _OverviewContract,
+        _EnrollmentContract
 
       }}
     >
