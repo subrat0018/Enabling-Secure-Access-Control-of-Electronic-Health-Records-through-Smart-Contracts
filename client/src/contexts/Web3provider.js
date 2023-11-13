@@ -61,11 +61,15 @@ const Web3Provider = ({ children }) => {
   const getContract = (chain, accounts) => {
     var web3 = new Web3(window.ethereum);
 
-    const deployedNetwork = EnrollmentContract.networks[chain];
+        const deployedNetwork = EnrollmentContract.networks[chain];
+        const deployedNetwork1 = PatientOrgContract.networks[chain];
+
+        const deployedNetwork2 = OverviewContract.networks[chain];
+
 
     const instance0 = new web3.eth.Contract(
         OverviewContract.abi,
-      deployedNetwork && deployedNetwork.address
+      deployedNetwork2 && deployedNetwork2.address
     );
     
     const instance1 = new web3.eth.Contract(
@@ -75,7 +79,7 @@ const Web3Provider = ({ children }) => {
       
     const instance2 = new web3.eth.Contract(
         PatientOrgContract.abi,
-        deployedNetwork && deployedNetwork.address
+        deployedNetwork1 && deployedNetwork1.address
       );
 
 
@@ -93,7 +97,6 @@ const Web3Provider = ({ children }) => {
         account,
         _OverviewContract,
         _PatientOrgContract,
-        _OverviewContract,
         _EnrollmentContract
 
       }}
