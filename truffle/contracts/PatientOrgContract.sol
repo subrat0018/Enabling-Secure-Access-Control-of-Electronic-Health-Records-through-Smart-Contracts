@@ -25,8 +25,8 @@ contract PatientOrgContract {
     mapping(address => Organization[]) public patientOrganizations; // Stores multiple organizations for each patient
 
     // Get all organizations and their access for a patient
-    function getAllOrganizationsWithAccess() public view returns (OrganizationWithAccess[] memory) {
-        AccessControl storage accessControl = patientAccessControls[msg.sender];
+    function getAllOrganizationsWithAccess(address patient) public view returns (OrganizationWithAccess[] memory) {
+        AccessControl storage accessControl = patientAccessControls[patient];
 
         uint orgCount = patientOrganizations[accessControl.patient].length;
         OrganizationWithAccess[] memory orgsWithAccess = new OrganizationWithAccess[](orgCount);
