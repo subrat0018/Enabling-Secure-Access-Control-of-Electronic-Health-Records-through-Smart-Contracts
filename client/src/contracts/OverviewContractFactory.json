@@ -37,7 +37,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -69,7 +70,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"patientAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"overviewContractAddress\",\"type\":\"address\"}],\"name\":\"OverviewContractCreated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"}],\"name\":\"createOverviewContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"}],\"name\":\"getOverviewContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"overviewContracts\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OverviewContractFactory.sol\":\"OverviewContractFactory\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/OverviewContract.sol\":{\"keccak256\":\"0xf512050acde796b663038b07f5b2cd7aa5c865da8cf9e7cb237da9cb7409acdb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e535c475abb6c0fae02d8b864c1c9bc96e81d293359b69d09fa4cf8cedec9670\",\"dweb:/ipfs/QmeNT9fg9uL5eaSE1FRFyuUevbQMVAiHW53hK5ScWfTPYv\"]},\"project:/contracts/OverviewContractFactory.sol\":{\"keccak256\":\"0x7735f6ee087a74608092e4f2792c1bb1d7d584301d6ce2772940056d9105baee\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3016ffb80e64602ca9ff6d000adf21eb27d1331122b09c3a31e5495891b52bcd\",\"dweb:/ipfs/QmZGDWGvnuvnT7ZmAT1yxPjUSqUVsgXZwruZyvvHYemBkR\"]}},\"version\":1}",
@@ -2464,12 +2466,13 @@
         }
       },
       "links": {},
-      "address": "0x826A3Faf0FC621Ae9d4b240C7CFf0B591537f572",
-      "transactionHash": "0xc045bfcd3612549ea5e06eec292f32401159c48e750bcbc5f1adcc036829dff5"
+      "address": "0xAaC914af8FA1B59a99B3dFfaC0709f163ab34dcc",
+      "transactionHash": "0x68fdd964d7d87fec15664da926dcc2904bd971da91696cb3592518d578cbdae8"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-11-13T19:23:44.435Z",
+  "updatedAt": "2023-11-13T19:42:42.446Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -18,7 +18,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -95,7 +96,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_pocAddress\",\"type\":\"address\"}],\"name\":\"addPOC\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"}],\"name\":\"getPatientSummary\",\"outputs\":[{\"components\":[{\"internalType\":\"address[]\",\"name\":\"pocAddresses\",\"type\":\"address[]\"},{\"internalType\":\"string[]\",\"name\":\"pocNames\",\"type\":\"string[]\"},{\"internalType\":\"string\",\"name\":\"status\",\"type\":\"string\"}],\"internalType\":\"struct OverviewContract.PatientSummary\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"patientSummaries\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"status\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_status\",\"type\":\"string\"}],\"name\":\"updatePatientStatus\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/OverviewContract.sol\":\"OverviewContract\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/OverviewContract.sol\":{\"keccak256\":\"0xf512050acde796b663038b07f5b2cd7aa5c865da8cf9e7cb237da9cb7409acdb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e535c475abb6c0fae02d8b864c1c9bc96e81d293359b69d09fa4cf8cedec9670\",\"dweb:/ipfs/QmeNT9fg9uL5eaSE1FRFyuUevbQMVAiHW53hK5ScWfTPYv\"]}},\"version\":1}",
@@ -11098,12 +11100,13 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x743328C5b49a707Bb83cDa09BE836a09d781F781",
-      "transactionHash": "0xbfcd05172162b3b8dc6173bade9935679786b2465ee6db30fe97d7cf2288b0cf"
+      "address": "0x2c56ffE88CD55640862058C8A2157B013211B0ce",
+      "transactionHash": "0x5290649e34e79452613f3daddbacc9ef837745d3d5ea043ef076ecf70eec16b1"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-11-13T19:23:44.423Z",
+  "updatedAt": "2023-11-13T19:42:42.437Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},

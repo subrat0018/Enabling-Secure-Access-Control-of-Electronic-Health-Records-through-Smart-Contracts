@@ -28,7 +28,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -87,7 +88,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_aadharNumber\",\"type\":\"uint256\"}],\"name\":\"enrollPatient\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_patientAddress\",\"type\":\"address\"}],\"name\":\"getPatient\",\"outputs\":[{\"components\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"patientAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"aadharNumber\",\"type\":\"uint256\"}],\"internalType\":\"struct EnrollmentContract.Patient\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"patients\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"address\",\"name\":\"patientAddress\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"aadharNumber\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/EnrollmentContract.sol\":\"EnrollmentContract\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/EnrollmentContract.sol\":{\"keccak256\":\"0xbef2ac6395d39748db9510c2bf44647e26495fb47792228307b6a28c92078146\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f450cc8835c8702eee6cdd2298dd94bec9ee5adafd94cbce14491f623fb9d6f5\",\"dweb:/ipfs/QmWTrFVBtnTdZizd9JNKJtEL2qhQcTaqdm8AhHd8tgGSKA\"]}},\"version\":1}",
@@ -9035,12 +9037,13 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0xB7bf96e065213E9fA5118DBc248804ABEC2dD69e",
-      "transactionHash": "0x2c8ae6cbea1fe766839bb421bacd8ed8e1b993a9f9c96f6d3f4097ec66b4651a"
+      "address": "0xD147Ea561948978119709FE2e0341F6a9421e5c0",
+      "transactionHash": "0xc1a50eb8a3ea27a4c38d0edbf5cb0518c190854e4fa7635ba42a6250d643edaa"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-11-13T19:23:44.235Z",
+  "updatedAt": "2023-11-13T19:42:42.424Z",
+  "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
     "methods": {},
