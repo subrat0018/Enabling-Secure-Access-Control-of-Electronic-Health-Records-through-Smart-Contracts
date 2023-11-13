@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
 import { useState } from "react";
-
+import Web3Context from "../contexts";
+import { enroll } from "../contexts/useContract/writeContract";
 const EnrollmentForm = () => {
+    const {account, _EnrollmentContract} = useContext(Web3Context);
   const [form, setForm] = useState({
     adharNo: "",
     name: "",
@@ -12,14 +14,13 @@ const EnrollmentForm = () => {
       <form className=" w-1/2 mt-10">
         <div class="relative z-0 w-full mb-6 group text-2xl">
           <input
-            type="email"
             name="floating_email"
             id="floating_email"
             class="block py-2.5 px-0 w-full text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
             placeholder=" "
             required
             onChange={(e)=>{
-                setForm(...form, {adharNo: e.target.value})
+                setForm({...form, adharNo: e.target.value})
             }}
           />
           <label
@@ -39,7 +40,7 @@ const EnrollmentForm = () => {
               placeholder=" "
               required
               onChange={(e)=>{
-                setForm(...form, {name: e.target.value})
+                setForm({...form, name: e.target.value});
             }}
             />
             <label
@@ -55,10 +56,10 @@ const EnrollmentForm = () => {
               name="floating_last_name"
               id="floating_last_name"
               class="block py-2.5 px-0 w-full text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder=" "
+              placeholder={`${account.currentAccount}`}
               required
               onChange={(e)=>{
-                setForm(...form, {address: e.target.value})
+                setForm({...form, address: e.target.value})
             }}
             />
             <label
@@ -70,10 +71,11 @@ const EnrollmentForm = () => {
           </div>
         </div>
         <button
-          type="submit"
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={()=>{
-            console.log(form);
+          onClick={(e)=>{
+            e.preventDefault();
+            // console.log(account)
+           enroll(_EnrollmentContract, account.currentAccount, form.name,account.currentAccount, form.adharNo);
           }}
         >
           Enroll

@@ -61,7 +61,7 @@ const Web3Provider = ({ children }) => {
   const getContract = (chain, accounts) => {
     var web3 = new Web3(window.ethereum);
 
-    const deployedNetwork = NFTWarranty.networks[chain];
+    const deployedNetwork = EnrollmentContract.networks[chain];
 
     const instance0 = new web3.eth.Contract(
         OverviewContract.abi,
@@ -93,7 +93,8 @@ const Web3Provider = ({ children }) => {
         account,
         _OverviewContract,
         _PatientOrgContract,
-        _OverviewContract
+        _OverviewContract,
+        _EnrollmentContract
 
       }}
     >
