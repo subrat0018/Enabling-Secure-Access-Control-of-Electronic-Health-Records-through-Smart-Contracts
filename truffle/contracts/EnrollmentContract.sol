@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
 
 // Contract for managing the enrollment of patients in a blockchain-based Electronic Health Record (EHR) system.
 contract EnrollmentContract {

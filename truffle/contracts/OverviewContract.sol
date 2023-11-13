@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
 
 // This contract manages an overview of patient data in a healthcare blockchain system.
 contract OverviewContract {
