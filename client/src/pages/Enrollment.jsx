@@ -76,7 +76,7 @@ const EnrollmentForm = () => {
           onClick={(e)=>{
             e.preventDefault();
             // console.log(account)
-           enroll(_EnrollmentContract, account.currentAccount, form.name,form.address, form.adharNo);
+          //  enroll(_EnrollmentContract, account.currentAccount, form.name,form.address, form.adharNo);
            setPatient(_PatientOrgContract, account.currentAccount, form.address)
           }}
         >

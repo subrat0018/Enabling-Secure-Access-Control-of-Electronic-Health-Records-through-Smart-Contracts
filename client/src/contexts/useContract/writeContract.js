@@ -17,6 +17,7 @@ const enroll = async (contract,account,name,patientAddress,aadharNumber) => {
 
 //PatientOrg
 const setPatient= async (contract,account,patientAddress) => {
+  console.log(contract)
   if (!contract) {
     return false;
   }
