@@ -47,7 +47,7 @@ contract PatientOrgContract {
     }
 
     // Update patient data
-    function updatePatientData(string memory _dataType, string memory _ipfsUri) public onlyPatient {
+    function updatePatientData(string memory _dataType, string memory _ipfsUri) public  {
         if (bytes(accessControl.patientData[_dataType]).length == 0) {
             accessControl.dataTypes.push(_dataType);
         }
@@ -76,5 +76,17 @@ contract PatientOrgContract {
     function revokeAccess(address _entity, string memory _dataType) public onlyPatient {
         accessControl.authorizedEntitiesForDataType[_dataType][_entity] = false;
         emit AccessRevoked(_entity, _dataType);
+    }
+     function getOrganizationsAccessForDataType(string memory _dataType) public view returns (Organization[] memory, bool[] memory) {
+        uint orgCount = patientOrganizations[accessControl.patient].length;
+        Organization[] memory orgs = new Organization[](orgCount);
+        bool[] memory hasAccess = new bool[](orgCount);
+
+        for (uint i = 0; i < orgCount; i++) {
+            orgs[i] = patientOrganizations[accessControl.patient][i];
+            hasAccess[i] = accessControl.authorizedEntitiesForDataType[_dataType][orgs[i].orgAddress];
+        }
+
+        return (orgs, hasAccess);
     }
 }

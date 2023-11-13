@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useContext} from "react";
+
 const EnrollmentForm = () => {
     return (
             <div className="flex justify-center w-full ">
