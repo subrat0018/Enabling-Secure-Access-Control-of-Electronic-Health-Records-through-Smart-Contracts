@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import Web3Context from "../contexts";
 import { enroll } from "../contexts/useContract/writeContract";
+import { setPatient } from "../contexts/useContract/writeContract";
 const EnrollmentForm = () => {
     const {account, _EnrollmentContract} = useContext(Web3Context);
   const [form, setForm] = useState({
@@ -76,6 +77,7 @@ const EnrollmentForm = () => {
             e.preventDefault();
             // console.log(account)
            enroll(_EnrollmentContract, account.currentAccount, form.name,account.currentAccount, form.adharNo);
+           set
           }}
         >
           Enroll
