@@ -10,8 +10,8 @@ const Home = () => {
         <Link to="/enroll" className="bg-blue-500 text-white py-2 px-4 rounded-md">
           Enroll
         </Link>
-        <Link to="/organizations" className="bg-green-500 text-white py-2 px-4 rounded-md">
-          View Organizations
+        <Link to="/create-contract" className="bg-green-500 text-white py-2 px-4 rounded-md">
+          Add Org And Data
         </Link>
         <Link to="/dashboard" className="bg-indigo-500 text-white py-2 px-4 rounded-md">
           Dashboard

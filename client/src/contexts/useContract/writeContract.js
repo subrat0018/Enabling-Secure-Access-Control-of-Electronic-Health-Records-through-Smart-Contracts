@@ -60,9 +60,20 @@ const updatePatientData= async(contract,account,_dataType,_ipfsuri)=>{
     return false;
   }
   const res = await contract.methods
-    .updatePatientData(_dataType,_dataType,_ipfsuri)
+    .updatePatientData(_dataType,_ipfsuri)
     .send({ from: account });
   return res;
 
 }
-export {enroll, setPatient, addOrganizationForPatient, grantAccess, revokeAccess, updatePatientData}
+const getPatientData= async(contract,account,_dataType, _patient)=>{
+  if (!contract) {
+    return false;
+  }
+  const res = await contract.methods
+    .getPatientDataUri(_dataType, _patient)
+    .send({ from: account });
+  return res;
+
+}
+
+export {enroll, setPatient, addOrganizationForPatient, grantAccess, revokeAccess, updatePatientData, getPatientData}

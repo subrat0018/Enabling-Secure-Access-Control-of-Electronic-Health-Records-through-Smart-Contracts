@@ -10,6 +10,7 @@ import AccessControlPage from "./pages/AccessControlPage";
 import CreateContractPage from "./pages/CreateContractPage";
 import Web3Context from "./contexts";
 import Organizations from "./pages/Organizations";
+import OrganizationDashboard from "./pages/OrganizationDashboard";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <Route path="/access-control" element={<AccessControlPage/>}/>
       <Route path="/create-contract" element={<CreateContractPage/>}/>
       <Route path="/organizations" element={<Organizations/>}/>
+      <Route path="/organization-dashboard" element={<OrganizationDashboard/>}/>
     </Routes>
   </div>)
 }

@@ -52,7 +52,7 @@ const CreateContractPage = () => {
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-4">
-        Create Patient Organization Contract
+        Add Organizations and Data
       </h1>
 
       <form>
@@ -86,12 +86,15 @@ const CreateContractPage = () => {
           <button
             type="button"
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
-            onClick={handleCreateContract}
+            onClick={(e)=>{
+              e.preventDefault();
+              addOrganizationForPatient(_PatientOrgContract, account.currentAccount);
+            }}
           >
             Add organization
           </button>
          </div>
-         <div>Add your data</div>
+         <div className=" text-3xl">Add your data</div>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2">
             Access Control:
@@ -134,7 +137,7 @@ const CreateContractPage = () => {
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
             onClick={handleCreateContract}
           >
-            Create Contract
+            Add Data
           </button>
         </div>
       </form>

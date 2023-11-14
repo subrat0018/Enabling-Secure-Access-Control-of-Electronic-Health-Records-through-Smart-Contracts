@@ -21,12 +21,10 @@ const Navbar = () => {
           </span>
         </a>
         {account.currentAccount == null ? (
-          <div
-            className="mr-24 cursor-pointer text-white bg-secondary-2 w-52 h-10 text-center rounded-xl pt-2 px-4"
-            onClick={connectWallet}
-          >
+         <button onClick={connectWallet}
+         type="button" class="focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:focus:ring-yellow-900">
             + Connect Wallet
-          </div>
+            </button>
         ) : (
           <div className="w-1/3 flex justify-center items-center mr-24 text-black">
             {" "}
@@ -36,10 +34,10 @@ const Navbar = () => {
             ).slice(String(account.currentAccount).length - 9)}`}
           </div>
         )}
-        <div
+        {/* <div
           class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
           id="navbar-sticky"
-        ></div>
+        ></div> */}
       </div>
     </nav>
   );
