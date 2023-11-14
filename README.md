@@ -157,7 +157,7 @@ npm install <package-name> --save-dev
 
 ## User Flow
 
-<a href="https://ibb.co/zNwQFVz"><img src="https://i.ibb.co/3kH4vmn/Whats-App-Image-2023-11-14-at-11-16-24-PM-1.jpg" alt="Whats-App-Image-2023-11-14-at-11-16-24-PM-1" border="0" /></a>
+<a href="https://ibb.co/QCmThz7"><img src="https://i.ibb.co/KLyfBRc/Blank-diagram-2.png" alt="Blank-diagram-2" border="0" /></a>
 <a href="https://ibb.co/fM410xJ"><img src="https://i.ibb.co/F6gx7Dp/Whats-App-Image-2023-11-14-at-11-16-24-PM.jpg" alt="Whats-App-Image-2023-11-14-at-11-16-24-PM" border="0" /></a>
 
 ## Contributors ✨
@@ -169,8 +169,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/Sibasis-Malla"><img src="https://avatars.githubusercontent.com/u/72388732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sibasis-Malla</b></sub></a><br /><a href="https://github.com/sambit-sankalp/project-grid/commits?author=Sibasis-Malla" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/subrat0018"><img src="https://avatars.githubusercontent.com/u/89215102?v=4" width="100px;" alt=""/><br /><sub><b>subrat0018</b></sub></a><br /><a href="https://github.com/sambit-sankalp/project-grid/commits?author=subrat0018" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Sibasis-Malla"><img src="https://avatars.githubusercontent.com/u/72388732?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sibasis-Malla</b></sub></a><br /><a href="https://github.com/subrat0018/Enabling-Secure-Access-Control-of-Electronic-Health-Records-through-Smart-Contracts/commits?author=Sibasis-Malla" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/subrat0018"><img src="https://avatars.githubusercontent.com/u/89215102?v=4" width="100px;" alt=""/><br /><sub><b>subrat0018</b></sub></a><br /><a href="https://github.com/subrat0018/Enabling-Secure-Access-Control-of-Electronic-Health-Records-through-Smart-Contracts/commits?author=subrat0018" title="Code">💻</a></td>
   </tr>
 </table>
 
