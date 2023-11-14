@@ -23,7 +23,7 @@ const CreateContractPage = () => {
     const res = await client.add(e.target.files[0])
     console.log(res);
     const str = 'ipfs://';
-    const finalResult = str.concat(String(result.path));
+    const finalResult = str.concat(String(res.path));
     setUri(finalResult);
     alert("Data Successfully Uploaded to IPFS",finalResult);
    
