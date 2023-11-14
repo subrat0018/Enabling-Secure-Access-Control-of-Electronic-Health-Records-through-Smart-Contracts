@@ -112,10 +112,10 @@ contract PatientOrgContract {
     }
 
     // Get patient data URI
-    function getPatientDataUri(string memory _dataType,address patient) public view returns (string memory) {
+    function getPatientDataUri(string memory _dataType,address patient,address sender) public view returns (string memory) {
         AccessControl storage accessControl = patientAccessControls[patient];
 
-        if (accessControl.authorizedEntitiesForDataType[_dataType][msg.sender] || msg.sender == accessControl.patient){
+        if (accessControl.authorizedEntitiesForDataType[_dataType][sender] || sender == accessControl.patient){
 
         return accessControl.patientData[_dataType];
         }
