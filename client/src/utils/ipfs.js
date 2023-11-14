@@ -1,4 +1,5 @@
 //import {create} from 'ipfs-http-client'
+const Buffer = require('buffer')
 const ipfsClient = require('ipfs-http-client')
 const projectId = '277J4qfFtNMoU4VjPgwkSC7agwj'
 const projectSecret = '25dbbdefd169318ba0dd5d82708f080a'
@@ -10,7 +11,7 @@ const client = ipfsClient.create({
   port: 5001,
   protocol: 'https',
   headers: {
-    authorization: auth
+    authorization:  'Basic '+ btoa(projectId + ':' + projectSecret)
   },
   apiPath: '/api/v0'
 })
