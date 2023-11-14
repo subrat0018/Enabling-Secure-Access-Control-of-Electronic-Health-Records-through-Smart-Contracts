@@ -65,13 +65,14 @@ const updatePatientData= async(contract,account,_dataType,_ipfsuri)=>{
   return res;
 
 }
-const getPatientData= async(contract,account,_dataType, _patient)=>{
+const getPatientData= async(contract,_dataType, _patient, sender)=>{
   if (!contract) {
     return false;
   }
   const res = await contract.methods
-    .getPatientDataUri(_dataType,_patient)
-    .send({ from: account });
+    .getPatientDataUri(_dataType,_patient,sender)
+    .call();
+    console.log(res)
   return res;
 
 }
