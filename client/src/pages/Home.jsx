@@ -13,9 +13,9 @@ const Home = () => {
         <Link to="/create-contract" className="bg-green-500 text-white py-2 px-4 rounded-md">
           Add Org And Data
         </Link>
-        <Link to="/dashboard" className="bg-indigo-500 text-white py-2 px-4 rounded-md">
+        {/* <Link to="/dashboard" className="bg-indigo-500 text-white py-2 px-4 rounded-md">
           Dashboard
-        </Link>
+        </Link> */}
         <Link to="/access-control" className="bg-purple-500 text-white py-2 px-4 rounded-md">
           Access Control
         </Link>

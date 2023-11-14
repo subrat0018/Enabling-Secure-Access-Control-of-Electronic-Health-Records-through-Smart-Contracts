@@ -3,7 +3,9 @@ import { useState } from "react";
 import Web3Context from "../contexts";
 import { enroll } from "../contexts/useContract/writeContract";
 import { setPatient } from "../contexts/useContract/writeContract";
+import { Navigate, useNavigate } from "react-router-dom";
 const EnrollmentForm = () => {
+    const navigate = useNavigate();
     const {account, _EnrollmentContract, _PatientOrgContract} = useContext(Web3Context);
   const [form, setForm] = useState({
     adharNo: "",
@@ -57,7 +59,7 @@ const EnrollmentForm = () => {
               name="floating_last_name"
               id="floating_last_name"
               class="block py-2.5 px-0 w-full text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-              placeholder={`${account.currentAccount}`}
+              placeholder=""
               required
               onChange={(e)=>{
                 setForm({...form, address: e.target.value})
@@ -73,11 +75,12 @@ const EnrollmentForm = () => {
         </div>
         <button
           class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-xl w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-          onClick={(e)=>{
-            e.preventDefault();
-            // console.log(account)
-           enroll(_EnrollmentContract, account.currentAccount, form.name,form.address, form.adharNo);
-           setPatient(_PatientOrgContract, account.currentAccount, form.address)
+          onClick={async(e)=>{
+           e.preventDefault();
+           await enroll(_EnrollmentContract, account.currentAccount, form.name,form.address, form.adharNo);
+           await setPatient(_PatientOrgContract, account.currentAccount, form.address);
+           alert(`Patient ${form.name} Enrolled Succesfully`);
+           navigate("/");
           }}
         >
           Enroll

@@ -19,18 +19,6 @@ const OrganizationDashboard = () => {
     setContractData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleCreateContract = async() => {
-    // Implement logic to create the Patient Organization Contract
-    updatePatientData(_PatientOrgContract,account.currentAccount)
-    // Reset form after creating the contract
-    setContractData({
-      ownerName: "",
-      ownerAddress: "",
-      accessControl: "",
-      accessFile: ""
-    });
-  };
-
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-4">
@@ -47,7 +35,7 @@ const OrganizationDashboard = () => {
             name="patientAddr"
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="ABC Org"
-            value={contractData.ownerName}
+            value={contractData.patientAddr}
             onChange={handleInputChange}
           />
         </div>
@@ -60,7 +48,7 @@ const OrganizationDashboard = () => {
             name="dataType"
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="0x0106B72164234f8Dca99D38415Ce00C133b93B70"
-            value={contractData.ownerAddress}
+            value={contractData.dataType}
             onChange={handleInputChange}
           />
         </div>
@@ -68,9 +56,9 @@ const OrganizationDashboard = () => {
           <button
             type="button"
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
-            onClick={(e)=>{
+            onClick={async(e)=>{
               e.preventDefault();
-              const res = getPatientData(_PatientOrgContract, account.currentAccount, contractData.dataType, contractData.patientAddr);
+              const res = await getPatientData(_PatientOrgContract, contractData.dataType, contractData.patientAddr, account.currentAccount);
               if(!res)
               {
                 alert("You don't have Access");
@@ -78,6 +66,7 @@ const OrganizationDashboard = () => {
               else
               {
                 alert(`Data Url ${res}`);
+                setContractData({patientAddr: "", dataType: ""});
               }
             }}
           >

@@ -21,28 +21,26 @@ const CreateContractPage = () => {
     //console.log(e.target.files[0]);
     setCoverImage(e.target.files[0]);
     const res = await client.add(e.target.files[0])
-    console.log(res);
-    const str = 'ipfs://';
+    const str = 'https://ipfs.io/ipfs/';
     const finalResult = str.concat(String(res.path));
     setUri(finalResult);
-    alert("Data Successfully Uploaded to IPFS",finalResult);
+    alert(`Data Successfully Uploaded to IPFS ${finalResult}`);
    
 }
   const [newAccessControl, setNewAccessControl] = useState("");
 
   const handleInputChange = (e) => {
-    console.log(e.target);
     const { name, value } = e.target;
     setContractData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   const handleCreateContract = async() => {
     // Implement logic to create the Patient Organization Contract
-    updatePatientData(_PatientOrgContract,account.currentAccount,contractData.accessControl,uri)
+    await updatePatientData(_PatientOrgContract,account.currentAccount,contractData.accessControl,uri)
+    alert("Data Added Successfully");
     // Reset form after creating the contract
     setContractData({
-      ownerName: "",
-      ownerAddress: "",
+      ...contractData,
       accessControl: "",
       accessFile: ""
     });
@@ -85,9 +83,11 @@ const CreateContractPage = () => {
           <button
             type="button"
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
-            onClick={(e)=>{
+            onClick={async (e)=>{
               e.preventDefault();
-              addOrganizationForPatient(_PatientOrgContract, account.currentAccount,contractData.ownerAddress,contractData.ownerName,"Org");
+              await addOrganizationForPatient(_PatientOrgContract, account.currentAccount,contractData.ownerAddress,contractData.ownerName,"Org");
+              alert("Organization Added Successfully");
+              setContractData({...contractData,ownerName:"", ownerAddress:""})
             }}
           >
             Add organization
