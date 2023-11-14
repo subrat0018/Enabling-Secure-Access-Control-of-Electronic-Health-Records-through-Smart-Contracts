@@ -36,15 +36,15 @@ contract PatientOrgContract {
             orgsWithAccess[i] = OrganizationWithAccess({
                 name: org.name,
                 orgAddress: org.orgAddress,
-                hasAccess: getAllDataTypesWithAccessForOrganization(org.orgAddress)
+                hasAccess: getAllDataTypesWithAccessForOrganization(org.orgAddress,patient)
             });
         }
 
         return orgsWithAccess;
     }
 
-        function getAllDataTypesWithAccessForOrganization(address _orgAddress) public view onlyPatient returns (DataTypeWithAccess[] memory) {
-        AccessControl storage accessControl = patientAccessControls[msg.sender];
+        function getAllDataTypesWithAccessForOrganization(address _orgAddress,address patient) public view onlyPatient returns (DataTypeWithAccess[] memory) {
+        AccessControl storage accessControl = patientAccessControls[patient];
 
         uint dataTypeCount = accessControl.dataTypes.length;
         DataTypeWithAccess[] memory dataTypesWithAccess = new DataTypeWithAccess[](dataTypeCount);
