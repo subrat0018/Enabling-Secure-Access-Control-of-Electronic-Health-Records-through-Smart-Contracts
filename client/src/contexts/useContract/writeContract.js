@@ -70,7 +70,7 @@ const getPatientData= async(contract,account,_dataType, _patient)=>{
     return false;
   }
   const res = await contract.methods
-    .getPatientDataUri(_dataType, _patient)
+    .getPatientDataUri(_dataType,_patient)
     .send({ from: account });
   return res;
 

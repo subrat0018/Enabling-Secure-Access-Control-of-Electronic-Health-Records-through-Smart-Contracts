@@ -120,7 +120,7 @@ contract PatientOrgContract {
         return accessControl.patientData[_dataType];
         }
         return "";
-        }
+    }
     // Grant access to a data type
     function grantAccess(address _entity, string memory _dataType) public onlyPatient {
         patientAccessControls[msg.sender].authorizedEntitiesForDataType[_dataType][_entity] = true;

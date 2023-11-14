@@ -70,12 +70,14 @@ const OrganizationDashboard = () => {
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
             onClick={(e)=>{
               e.preventDefault();
-              try
+              const res = getPatientData(_PatientOrgContract, account.currentAccount, contractData.dataType, contractData.patientAddr);
+              if(!res)
               {
-                getPatientData(_PatientOrgContract, account.currentAccount, contractData.dataType);
-              }catch(error)
+                alert("You don't have Access");
+              }
+              else
               {
-                alert()
+                alert(`Data Url ${res}`);
               }
             }}
           >

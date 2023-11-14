@@ -35,7 +35,7 @@ const AccessControlPage = () => {
           organizationsData.map((organization) => (
             <div key={organization.id} className="bg-gray-200 p-4 rounded-md">
               <h2 className="text-lg font-bold mb-2">
-                {organization.orgAddress}
+                {organization.name}
               </h2>
               <p className="mb-2">Granted Access:</p>
               <ul>

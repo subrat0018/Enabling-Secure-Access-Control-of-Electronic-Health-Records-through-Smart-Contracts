@@ -38,7 +38,6 @@ const CreateContractPage = () => {
 
   const handleCreateContract = async() => {
     // Implement logic to create the Patient Organization Contract
-    addOrganizationForPatient(_PatientOrgContract, account.currentAccount)
     updatePatientData(_PatientOrgContract,account.currentAccount,contractData.accessControl,uri)
     // Reset form after creating the contract
     setContractData({
@@ -88,7 +87,7 @@ const CreateContractPage = () => {
             className="bg-blue-500 text-white py-2 px-4 rounded-md"
             onClick={(e)=>{
               e.preventDefault();
-              addOrganizationForPatient(_PatientOrgContract, account.currentAccount);
+              addOrganizationForPatient(_PatientOrgContract, account.currentAccount,contractData.ownerAddress,contractData.ownerName,"Org");
             }}
           >
             Add organization
