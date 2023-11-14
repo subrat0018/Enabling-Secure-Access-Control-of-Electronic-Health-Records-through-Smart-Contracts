@@ -11100,12 +11100,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x112Cb5060203E7090A283DFE6c3Ebc24b2A59049",
-      "transactionHash": "0x58e63bbbef4044af9ee9f1eb4642380afabd41303f4f49e7107f34a7b8c83d17"
+      "address": "0x90289e5a28b484d810E9550ab4211853c90Cd905",
+      "transactionHash": "0xedf86a91cf0c6b030fe0a5c0695d13fd5753c2cbb792650cbb363f5098abe7be"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-11-14T06:55:53.618Z",
+  "updatedAt": "2023-11-14T07:54:02.854Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",

@@ -112,10 +112,10 @@ contract PatientOrgContract {
     }
 
     // Get patient data URI
-    function getPatientDataUri(string memory _dataType) public view returns (string memory) {
-        AccessControl storage accessControl = patientAccessControls[msg.sender];
+    function getPatientDataUri(string memory _dataType,address patient) public view returns (string memory) {
+        AccessControl storage accessControl = patientAccessControls[patient];
 
-        require(accessControl.authorizedEntitiesForDataType[_dataType][msg.sender] || msg.sender == accessControl.patient, "Unauthorized access for data type");
+        require(accessControl.authorizedEntitiesForDataType[_dataType][patient] || msg.sender == accessControl.patient, "Unauthorized access for data type");
         return accessControl.patientData[_dataType];
     }
 

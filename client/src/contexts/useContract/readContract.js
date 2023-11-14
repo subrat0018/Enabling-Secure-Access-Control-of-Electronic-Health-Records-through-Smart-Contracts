@@ -19,6 +19,18 @@ const getAccessList =async(contract)=>{
   return arr;
 
 } 
+const getOrgData =async(contract, account)=>{
+  const res = await contract.methods.getAllOrganizationsWithAccess(account).call();
+  let arr = []
+  for(let i=0;i<res.length;i++){
+    console.log(i, res[i]);
+    arr.push(res[i])
+  }
+  // arr.push(res)
+  // console.log(res)
+  return arr;
+} 
+
 const getPatientDataUri = async(contract)=> {
   const res = await contract.methods.getPatientDataTypes().call();
   let arr=[];
@@ -27,3 +39,5 @@ const getPatientDataUri = async(contract)=> {
     arr.push({type:res[i],data});
   }
 } 
+
+export  {getPatient, getAccessList, getOrgData, getPatientDataUri}

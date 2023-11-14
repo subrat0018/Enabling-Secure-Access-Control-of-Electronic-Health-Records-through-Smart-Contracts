@@ -4,7 +4,7 @@ import Web3Context from "../contexts";
 import { enroll } from "../contexts/useContract/writeContract";
 import { setPatient } from "../contexts/useContract/writeContract";
 const EnrollmentForm = () => {
-  const {account, _EnrollmentContract, _PatientOrgContract} = useContext(Web3Context);
+    const {account, _EnrollmentContract, _PatientOrgContract} = useContext(Web3Context);
   const [form, setForm] = useState({
     adharNo: "",
     name: "",

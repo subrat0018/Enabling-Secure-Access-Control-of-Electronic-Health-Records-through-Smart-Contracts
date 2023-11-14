@@ -9037,12 +9037,12 @@
     "80001": {
       "events": {},
       "links": {},
-      "address": "0x9e84CE836E2F9249784b9517bE02bf6E3Dc50529",
-      "transactionHash": "0xc22f7ccdbc6d3669282a4cb97eeafdd5f0dad3913cc6bc80768ddfbd1011a280"
+      "address": "0x96C7c323e802DeDC75570eD5073EC1669389fa17",
+      "transactionHash": "0x420f6da20d2b913355ceb0f37794a999c41a637487cb1bf66c352d6886c41c4c"
     }
   },
   "schemaVersion": "3.4.8",
-  "updatedAt": "2023-11-14T06:55:53.612Z",
+  "updatedAt": "2023-11-14T07:54:02.846Z",
   "networkType": "ethereum",
   "devdoc": {
     "kind": "dev",
