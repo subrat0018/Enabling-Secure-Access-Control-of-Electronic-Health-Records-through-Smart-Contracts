@@ -39,6 +39,9 @@ const AccessControlPage = () => {
               <h2 className="text-lg font-bold mb-2">
                 {organization.name}
               </h2>
+              <h2 className="text-lg font-bold mb-2">
+                {organization.orgAddress}
+              </h2>
               <p className="mb-2">Granted Access:</p>
               <ul>
                 {organization.hasAccess &&

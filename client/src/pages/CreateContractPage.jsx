@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import Web3Context from "../contexts";
 import { addOrganizationForPatient, updatePatientData } from "../contexts/useContract/writeContract";
-import { grantAccess } from "../contexts/useContract/writeContract";
+// import { grantAccess } from "../contexts/useContract/writeContract";
 import client from '../utils/ipfs';
 
 
@@ -15,11 +15,11 @@ const CreateContractPage = () => {
     accessControl: "",
     accessFile: ""
   });
-  const[Coverimage,setCoverImage] = useState("")
+  // const[Coverimage,setCoverImage] = useState("")
   const [uri,setUri] = useState("")
   const showPhoto = async(e) => {
     //console.log(e.target.files[0]);
-    setCoverImage(e.target.files[0]);
+    // setCoverImage(e.target.files[0]);
     const res = await client.add(e.target.files[0])
     const str = 'https://ipfs.io/ipfs/';
     const finalResult = str.concat(String(res.path));
@@ -34,8 +34,10 @@ const CreateContractPage = () => {
     setContractData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleCreateContract = async() => {
+  const handleCreateContract = async(e) => {
     // Implement logic to create the Patient Organization Contract
+    e.preventDefault()
+    console.log("hello",uri)
     await updatePatientData(_PatientOrgContract,account.currentAccount,contractData.accessControl,uri)
     alert("Data Added Successfully");
     // Reset form after creating the contract
