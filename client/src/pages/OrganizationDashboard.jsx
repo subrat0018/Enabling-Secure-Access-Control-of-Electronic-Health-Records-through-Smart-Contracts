@@ -34,7 +34,7 @@ const OrganizationDashboard = () => {
             type="text"
             name="patientAddr"
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="ABC Org"
+            placeholder="0x0106B72164234f8Dca99D38415Ce00C133b93B70"
             value={contractData.patientAddr}
             onChange={handleInputChange}
           />
@@ -47,7 +47,7 @@ const OrganizationDashboard = () => {
             type="text"
             name="dataType"
             className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-            placeholder="0x0106B72164234f8Dca99D38415Ce00C133b93B70"
+            placeholder="Xray"
             value={contractData.dataType}
             onChange={handleInputChange}
           />
