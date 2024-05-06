@@ -49,33 +49,33 @@ const CreateContractPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-4">
-        Add Organizations and Data
+    <div className="container mx-auto p-8 flex flex-col justify-center">
+      <h1 className="text-3xl font-bold mb-4 text-center">
+        Add Organizations
       </h1>
 
-      <form>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+      <form className=" w-1/2 flex justify-around flex-col items-center m-auto bg-gray-300 rounded-md h-96 space-y-4">
+        <div className="mb-12 w-3/4">
+          <label className="block text-black text-lg font-bold mb-2">
             Organization Name:
           </label>
           <input
             type="text"
             name="ownerName"
-            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none bg-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="ABC Org"
             value={contractData.ownerName}
             onChange={handleInputChange}
           />
         </div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+        <div className="mb-4 w-3/4">
+          <label className="block text-black text-lg font-bold mb-2">
             Organization Address:
           </label>
           <input
             type="text"
             name="ownerAddress"
-            className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+            className="shadow appearance-none bg-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             placeholder="0x0106B72164234f8Dca99D38415Ce00C133b93B70"
             value={contractData.ownerAddress}
             onChange={handleInputChange}
@@ -84,7 +84,7 @@ const CreateContractPage = () => {
         <div className="flex justify-end">
           <button
             type="button"
-            className="bg-blue-500 text-white py-2 px-4 rounded-md"
+            className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-700"
             onClick={async (e)=>{
               e.preventDefault();
               await addOrganizationForPatient(_PatientOrgContract, account.currentAccount,contractData.ownerAddress,contractData.ownerName,"Org");
@@ -95,9 +95,15 @@ const CreateContractPage = () => {
             Add organization
           </button>
          </div>
-         <div className=" text-3xl">Add your data</div>
-        <div className="mb-4">
-          <label className="block text-gray-700 text-sm font-bold mb-2">
+         
+        
+      </form>
+      <h1 className="text-3xl font-bold mt-8 mb-4 text-center">
+        Add Data
+      </h1>
+      <form className="w-1/2 flex justify-around flex-col items-center m-auto bg-gray-300 rounded-md h-96 space-y-4">
+        <div className="mb-4 w-3/4">
+          <label className="block text-black text-lg font-bold mb-2">
             Access Control:
           </label>
           <div className="flex items-center">
@@ -106,20 +112,20 @@ const CreateContractPage = () => {
               name="accessControl"
               value={contractData.accessControl}
               onChange={handleInputChange}
-              placeholder="accessControl"
-              className="mr-2 shadow appearance-none border rounded py-1 px-2 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Access Control"
+              className="shadow appearance-none bg-gray-100 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
             />
           </div>
         </div>
-        <div className=" mb-4">
+        <div className=" mb-4 w-3/4">
           <label
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-lg font-bold text-black dark:text-white"
             for="file_input"
           >
-            Upload file
+            Upload file:
           </label>
           <input
-            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            class="shadow appearance-none bg-gray-100 rounded w-full py-2 px-3 leading-tight  focus:shadow-outline dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
             id="file_input"
             type="file"
             onChange={showPhoto}
@@ -135,13 +141,12 @@ const CreateContractPage = () => {
         <div className="flex justify-end">
           <button
             type="button"
-            className="bg-blue-500 text-white py-2 px-4 rounded-md"
+            className="bg-gray-500 text-white py-2 px-4 rounded-md hover:bg-gray-700"
             onClick={handleCreateContract}
           >
             Add Data
           </button>
-        </div>
-      </form>
+        </div></form>
     </div>
   );
 };

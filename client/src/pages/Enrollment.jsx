@@ -13,7 +13,7 @@ const EnrollmentForm = () => {
     address: ""
   });
   return (
-    <div className="flex justify-center w-full ">
+    <div className="flex justify-center w-full">
       <form className=" w-1/2 mt-10">
         <div class="relative z-0 w-full mb-6 group text-2xl">
           <input
