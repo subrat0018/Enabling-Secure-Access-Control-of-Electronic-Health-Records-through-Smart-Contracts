@@ -26,7 +26,7 @@ const Navbar = () => {
             + Connect Wallet
             </button>
         ) : (
-          <div className="w-1/3 flex justify-center items-center mr-24 text-black">
+          <div className="w-1/3 flex justify-center items-center mr-24 text-white">
             {" "}
             Hey,{" "}
             {`${String(account.currentAccount).slice(0, 9)}...${String(
