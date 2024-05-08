@@ -84,7 +84,7 @@ const CreateContractPage = () => {
         `Decrypt at https://decrypt.mesh3.network/evm/${output.data[0].Hash}`
       )
       
-      handleCreateContract(`https://decrypt.mesh3.network/evm/${output.data[0].Hash}`).then(()=>{
+      handleCreateContract(output.data[0].Hash).then(()=>{
         console.log("done")
       })
     } catch (error) {

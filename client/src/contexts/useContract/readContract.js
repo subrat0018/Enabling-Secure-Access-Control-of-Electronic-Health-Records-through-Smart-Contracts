@@ -39,5 +39,8 @@ const getPatientDataUri = async(contract)=> {
     arr.push({type:res[i],data});
   }
 } 
-
-export  {getPatient, getAccessList, getOrgData, getPatientDataUri}
+const getPatientSpecificUri = async(contract,datatype,acc,sender)=>{
+  const dt = await contract.methods.getPatientDataUri(datatype,acc,sender).call();
+  return dt;
+}
+export  {getPatient, getAccessList, getOrgData, getPatientDataUri,getPatientSpecificUri}
