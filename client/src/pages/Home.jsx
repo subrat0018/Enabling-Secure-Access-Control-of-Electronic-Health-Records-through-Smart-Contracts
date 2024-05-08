@@ -9,17 +9,17 @@ const Home = () => {
       <div className='flex flex-row justify-center w-4/5 h-full'>
       <img className='w-3/4' src="https://res.cloudinary.com/dddvy7tax/image/upload/v1714986260/home_moutxb.jpg" alt="" />
       <div className="flex justify-center space-x-4 items-center">
-        <Link to="/enroll" className="bg-gray-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-gray-500  hover:text-3xl">
+        <Link to="/enroll" className="bg-blue-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-blue-500  hover:text-3xl">
           Enroll
         </Link>
-        <Link to="/create-contract" className="bg-gray-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-gray-500  hover:text-3xl">
+        <Link to="/create-contract" className="bg-blue-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-blue-500  hover:text-3xl">
           Add Org And Data
         </Link>
-        {/* <Link to="/dashboard" className="bg-indigo-500 text-white py-2 px-4 rounded-md">
-          Dashboard
-        </Link> */}
-        <Link to="/access-control" className=" bg-gray-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-gray-500  hover:text-3xl">
+        <Link to="/access-control" className=" bg-blue-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-blue-500  hover:text-3xl">
           Access Control
+        </Link>
+        <Link to="/organization-dashboard" className=" bg-blue-300 text-white py-2 px-4 rounded-md w-40 h-32 flex justify-center items-center transition-all duration-300 ease-in-out hover:bg-blue-500  hover:text-3xl">
+        Org Dashboard
         </Link>
       </div>
       </div>

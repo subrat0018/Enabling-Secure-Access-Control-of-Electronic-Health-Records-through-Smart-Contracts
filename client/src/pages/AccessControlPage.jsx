@@ -122,10 +122,10 @@ const shareFile = async (dataType,userB) => {
               <h2 className="text-lg font-bold mb-2">
                 {organization.name}
               </h2>
-              <h2 className="text-lg font-bold mb-2">
+              <h2 className="text-lg mb-2">
                 {organization.orgAddress}
               </h2>
-              <p className="mb-2">Granted Access:</p>
+              <p className="mb-2 font-bold">Granted Access:</p>
               <ul>
                 {organization.hasAccess &&
                   organization.hasAccess.map((access) => {
@@ -185,39 +185,6 @@ const shareFile = async (dataType,userB) => {
                   })}
                 
               </ul>
-                <label className="block text-gray-700 text-sm font-bold mb-2">
-                  Access Control:
-                </label>
-                <div className="flex items-center">
-                  <input
-                    type="text"
-                    name="accessControl"
-                    value={access}
-                    placeholder="accessControl"
-                    className="mr-2 shadow appearance-none border rounded py-1 px-2 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                  <button
-                    type="button"
-                    class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-                    onClick={async (e) => {
-                      e.preventDefault();
-                      if (!access) {
-                        alert("Access ");
-                      }
-                      await grantAccess(
-                        _PatientOrgContract,
-                        account.currentAccount,
-                        organization.orgAddress,
-                        access
-                      );
-                      setAccess("");
-                      alert("Access Added");
-                      window.location.reload();
-                    }}
-                  >
-                    Add
-                  </button>
-                </div>
               </div>
             </div>
           ))}

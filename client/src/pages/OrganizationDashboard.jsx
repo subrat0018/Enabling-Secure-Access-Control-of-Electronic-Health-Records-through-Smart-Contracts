@@ -146,11 +146,6 @@ const OrganizationDashboard = () => {
                 alert("You don't have Access");
               } else {
                 await decrypt(res).then((res1) => setFileURL(res1));
-                // alert(`https://decrypt.mesh3.network/evm/${res}`)
-                //   fileURL?
-                //   <a href={fileURL} target="_blank">viewFile</a>
-                // :
-                //   null
               }
             }}
           >
@@ -158,7 +153,7 @@ const OrganizationDashboard = () => {
           </button>
           {fileURL ? (
             <Link
-              className="rounded-md bg-blue-500 px-4 py-2 text-white"
+              className="rounded-md bg-yellow-500 px-4 py-2 text-white"
               to={fileURL}
               target="_blank" 
               rel="noopener noreferrer"
