@@ -16,7 +16,7 @@ const Navbar = () => {
             class="h-8"
             alt="Flowbite Logo"
           />
-          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap">
             MediChain
           </span>
         </a>
